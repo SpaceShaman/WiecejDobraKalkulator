@@ -24,16 +24,21 @@ const taxAfterDonations = computed(() =>
     income.value,
     monthlyZUSPayment.value,
     otherDeductions.value,
-    donations.value
+    donations.value,
+    maxDonation.value
   )
 );
 function calculateTax(
   income: number,
   monthlyZUSPayment: number,
   otherDeductions: number,
-  donations: number = 0
+  donations: number = 0,
+  maxDonation: number = 0
 ) {
   const annualIncome = income * 12;
+  if (donations > maxDonation) {
+    donations = maxDonation;
+  }
   const annualDonations = donations * 12;
   const annualZUS = monthlyZUSPayment * 12;
   const taxableIncome =
