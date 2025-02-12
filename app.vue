@@ -8,10 +8,11 @@ useHead({
         "Kalkulator obniżenia podatku przez darowizny w Polsce. Oblicz, jaką kwotę możesz przekazać na cele charytatywne, oraz o ile obniży to Twój podatek.",
     },
   ],
+  link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 });
 const monthlyZUSPayment = ref(1773.96);
-const income = ref(20000);
-const donations = ref(1200);
+const income = ref();
+const donations = ref();
 const otherDeductions = ref(0);
 const maxDonation = computed(() => income.value * 0.06);
 const taxReduction = computed(() => maxDonation.value * 12);
