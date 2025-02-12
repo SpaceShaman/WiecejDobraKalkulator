@@ -1,4 +1,14 @@
 <script setup lang="ts">
+useHead({
+  title: "Obniżenie podatku przez darowizny",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Kalkulator obniżenia podatku przez darowizny w Polsce. Oblicz, jaką kwotę możesz przekazać na cele charytatywne, oraz o ile obniży to Twój podatek.",
+    },
+  ],
+});
 const monthlyZUSPayment = ref(1773.96);
 const income = ref(20000);
 const donations = ref(1200);
